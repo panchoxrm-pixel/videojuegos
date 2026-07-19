@@ -1,6 +1,7 @@
 import './TablaVideojuegos.css';
 
-function TablaVideojuegos({ videojuegos }) {
+// 1. Recibimos las funciones onEliminar y onEditar como props
+function TablaVideojuegos({ videojuegos, onEliminar, onEditar }) {
   return (
     <div className="table-container">
       <table>
@@ -13,6 +14,7 @@ function TablaVideojuegos({ videojuegos }) {
             <th>Precio</th>
             <th>Disponible</th>
             <th>Progreso</th>
+            <th>Acciones</th> {/* 2. Nueva columna de acciones */}
           </tr>
         </thead>
         <tbody>
@@ -26,6 +28,11 @@ function TablaVideojuegos({ videojuegos }) {
               <td>{juego.disponible ? "Sí" : "No"}</td>
               <td>
                 <progress value={juego.progreso} max="1" />
+              </td>
+              <td>
+                {/* 3. Botones que llaman a las funciones del padre */}
+                <button onClick={() => onEditar(juego)}>Editar</button>
+                <button onClick={() => onEliminar(juego.id)}>Eliminar</button>
               </td>
             </tr>
           ))}
