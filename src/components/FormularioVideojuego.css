@@ -1,0 +1,134 @@
+    .formulario-videojuego {
+  max-width: 520px;
+  margin: 0 auto 48px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+  background: var(--bg, #fff);
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.formulario-videojuego h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h, #08060d);
+}
+
+.campo-checkbox label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.formulario-videojuego input[type="text"],
+.formulario-videojuego input[type="number"],
+.formulario-videojuego input[type="date"],
+.formulario-videojuego select,
+.formulario-videojuego textarea {
+  font: inherit;
+  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border, #e5e4e7);
+  background: transparent;
+  color: var(--text-h, #08060d);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.formulario-videojuego input[type="text"]:focus,
+.formulario-videojuego input[type="number"]:focus,
+.formulario-videojuego input[type="date"]:focus,
+.formulario-videojuego select:focus,
+.formulario-videojuego textarea:focus {
+  border-color: var(--accent, #aa3bff);
+  box-shadow: 0 0 0 3px var(--accent-bg, rgba(170, 59, 255, 0.1));
+}
+
+.formulario-videojuego textarea {
+  resize: vertical;
+  min-height: 70px;
+  transition: min-height 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-videojuego textarea:focus {
+  min-height: 130px;
+}
+
+.contador-caracteres {
+  align-self: flex-end;
+  font-size: 12px;
+  color: var(--text, #6b6375);
+}
+
+.formulario-videojuego input[type="range"] {
+  accent-color: var(--accent, #aa3bff);
+}
+
+.formulario-videojuego input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent, #aa3bff);
+}
+
+.error-mensaje {
+  font-size: 13px;
+  color: #e0245e;
+  opacity: 0;
+  animation: aparecerError 0.3s ease forwards;
+}
+
+@keyframes aparecerError {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formulario-videojuego button[type="submit"] {
+  margin-top: 8px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent, #aa3bff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.formulario-videojuego button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .formulario-videojuego {
+    margin: 0 16px 32px;
+    padding: 20px;
+  }
+}

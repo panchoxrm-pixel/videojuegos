@@ -48,3 +48,24 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
     background-color: #27ae60;
 }
+
+/* Diseño responsivo para dispositivos móviles */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 12px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}

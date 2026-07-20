@@ -32,7 +32,15 @@ function TablaVideojuegos({ videojuegos, onEliminar, onEditar }) {
               <td>
                 {/* 3. Botones que llaman a las funciones del padre */}
                 <button onClick={() => onEditar(juego)}>Editar</button>
-                <button onClick={() => onEliminar(juego.id)}>Eliminar</button>
+                <button
+                  onClick={() => {
+                    if (window.confirm(`¿Eliminar "${juego.titulo}"? Esta acción no se puede deshacer.`)) {
+                      onEliminar(juego.id);
+                    }
+                  }}
+                >
+                  Eliminar
+                </button>
               </td>
             </tr>
           ))}
